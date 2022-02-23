@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Vehicle.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Vehicle.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">vehicle</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Vehicle {</span>
+
+    <span class="s2">//variables</span>
+
+    <span class="s0">private double </span><span class="s1">tankSize</span><span class="s0">;</span>
+    <span class="s0">private double </span><span class="s1">efficiency</span><span class="s0">;</span>
+    <span class="s0">private double </span><span class="s1">fuelInTank = </span><span class="s3">0</span><span class="s0">;</span>
+    <span class="s0">private  double </span><span class="s1">availableTankCapacity</span><span class="s0">;</span>
+
+    <span class="s2">//constructor</span>
+
+
+    <span class="s0">public </span><span class="s1">Vehicle(){</span>
+
+
+
+    <span class="s1">}</span>
+    <span class="s0">public double </span><span class="s1">getAvailableTankCapacity() {</span>
+        <span class="s1">availableTankCapacity = tankSize - fuelInTank</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">availableTankCapacity</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public double </span><span class="s1">getTankSize() {</span>
+        <span class="s1">Scanner userInput = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">usersTank = userInput.nextDouble()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">Updating your tank's total capacity...</span><span class="s0">\n</span><span class="s4">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">tankSize = usersTank</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">usersTank</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">public double </span><span class="s1">getEfficiency() {</span>
+        <span class="s1">Scanner userInput = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">usersEfficiency = userInput.nextDouble()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">Updating your vehicle's fuel efficiency...</span><span class="s0">\n</span><span class="s4">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">efficiency = usersEfficiency</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">usersEfficiency</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">public double </span><span class="s1">getFuelInTank() {</span>
+        <span class="s0">return </span><span class="s1">fuelInTank</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">addPetrol() {</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;How many gallons of gas do you wish to add?</span><span class="s0">\n</span><span class="s4">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Scanner addGas = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">gasAdded = addGas.nextDouble()</span><span class="s0">;</span>
+        <span class="s0">if </span><span class="s1">(gasAdded &gt; getAvailableTankCapacity()) {</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">Error! Your gas tank is too small.&quot; </span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">System.out.printf(</span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">Gas being added...</span><span class="s0">\n</span><span class="s4">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.printf(</span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">Updated fuel in Tank: %.2f</span><span class="s0">\t</span><span class="s4">&quot;</span><span class="s0">, </span><span class="s1">gasAdded + fuelInTank)</span><span class="s0">;</span>
+            <span class="s1">System.out.println()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+    <span class="s0">public void </span><span class="s1">driveTo(){</span>
+
+        <span class="s1">System.out.println()</span><span class="s0">;</span>
+        <span class="s1">System.out.printf(</span><span class="s4">&quot;Miles available to travel with current gas:</span><span class="s0">\n</span><span class="s4">%.2f&quot;</span><span class="s0">, </span><span class="s1">tankSize * efficiency)</span><span class="s0">;</span>
+
+
+    <span class="s1">}</span>
+
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

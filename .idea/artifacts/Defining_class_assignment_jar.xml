@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Defining class assignment:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Defining_class_assignment_jar</output-path>
+    <root id="archive" name="Defining class assignment.jar">
+      <element id="module-output" name="Defining class assignment" />
+    </root>
+  </artifact>
+</component>
